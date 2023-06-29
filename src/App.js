@@ -1,23 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import BootStrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import filterFactory, { selectFilter } from "react-bootstrap-table2-filter";
+
+const selectOptions = {
+  2: '2',
+  5: '5',
+  40: '40'
+};
 
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = () => {
+    axios("https://jsonplaceholder.typicode.com/comments").then((res) => {
+      setData(res.data)
+
+    });
+  };
+  const emailFormatter = (data, row) => {
+    return<span onClick={() => alert("You clicked")}>
+    Email = {data}</ span>
+  }
+  const columns = [
+    {
+      dataField: "email",
+      text: "Email",
+      formatter: emailFormatter
+
+    },
+    {
+      dataField: "postId",
+      text: "Product ID",
+      sort: true,
+      filter: selectFilter({
+        options: selectOptions
+      })
+    },
+    {
+      dataField: "name",
+      text: "Name",
+    }
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BootStrapTable
+        keyField="id"
+        data={data}
+        columns={columns}
+        striped
+        hover
+        condensed
+        pagination={paginationFactory()}
+        filter={filterFactory()}
+      ></BootStrapTable>
     </div>
   );
 }

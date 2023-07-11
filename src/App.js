@@ -1,13 +1,10 @@
 import axios from "axios";
-// import UseHttpClient from "./hooks/http-hook";
 import { useState, useEffect } from "react";
 import BootStrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import filterFactory, {
   selectFilter,
-  customFilter,
   Comparator,
-  FILTER_TYPES,
   dateFilter,
 } from "react-bootstrap-table2-filter";
 import React from "react";

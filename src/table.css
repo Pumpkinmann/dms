@@ -1,0 +1,20 @@
+.filter-modified > label > .sr-only {
+    display: none;
+}
+
+.date-filter > .filter-label, .filter-label > span {
+    display: none;
+    
+}
+
+.filter-label {
+    display: block;
+}
+
+thead > tr {
+    text-align: center;
+}
+.filter-label > select {
+    text-align: center;
+}
+

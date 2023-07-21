@@ -1,3 +1,18 @@
+#home_button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: left;
+  margin: 0;
+  width: 60%;
+  height: 10%;
+}
+
+#home_button > a {
+  display: inline-block;
+}
+
+
 .nav-links {
   list-style: none;
   margin: 0;
@@ -12,13 +27,22 @@
 
 .nav-links li {
   margin: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 7%;
 }
 
 .nav-links a {
+  display: inline-block;
   border: 1px solid transparent;
   color: #292929;
   text-decoration: none;
   padding: 0.5rem;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .nav-links a:hover,
@@ -46,4 +70,9 @@
 .nav-links button:active {
   background: #292929;
   color: white;
+}
+
+#home_button  h2 {
+  text-align: center;
+  margin-top: 10%;
 }

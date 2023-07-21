@@ -7,13 +7,15 @@ function App() {
   return (
     <Router>
       <MainNavigation />
-      <main>
+      <main className="main"> 
         <Routes>
-          <Route exact="true" path="/"element={<Table></Table>}>
-          </Route>
-          <Route exact="true" path="/ruanhuaye" element={<Table></Table>}>
-          </Route>
-          <Route path="*" element={<Table></Table>}/>
+          <Route
+            exact="true"
+            path="/ruanhuaye"
+            element={<Table></Table>}
+          ></Route>
+          <Route exact="true" path="/" element={<Table></Table>}></Route>
+          <Route path="*" element={<Table></Table>} />
         </Routes>
       </main>
     </Router>

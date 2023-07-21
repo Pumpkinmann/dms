@@ -109,8 +109,11 @@ const Table = () => {
   useEffect(() => {
     getData();
   }, []);
+  // const getData = () => {
+  //   axios("http://localhost:5000/api/2023").then((res) => setData(res.data));
+  // };
   const getData = () => {
-    axios("http://localhost:5000/api/2023").then((res) => setData(res.data));
+    axios("https://jsonplaceholder.typicode.com/comments").then((res) => setData(res.data));
   };
   const columns = [
     {

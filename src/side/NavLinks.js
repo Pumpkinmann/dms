@@ -1,19 +1,23 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './NavLinks.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./NavLinks.css";
 
-const NavLinks = props => {
-
+const NavLinks = (props) => {
   return (
     <ul className="nav-links">
-      <li>
+      <li id="home_button">
         <NavLink to="/" exact>
-          烯烃
+          <h2>主页</h2>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/xiting" exact>
+          <h2>烯烃</h2>
         </NavLink>
       </li>
       <li>
         <NavLink to="/ruanhuaye" exact>
-          软化液
+          <h2>软化液</h2>
         </NavLink>
       </li>
     </ul>
